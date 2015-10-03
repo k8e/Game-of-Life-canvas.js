@@ -1,0 +1,48 @@
+body {
+  background-color: #CCCCCC;
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  margin: 50px;
+  padding: 0px;
+}
+h1 {
+  color: #555555;
+  text-align: center;
+}
+#game_board {
+  background-color: #FFFFFF;
+  display: block;
+  border-radius: 5px;
+  margin: auto;
+}
+#controls {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  margin: 10px 0;
+}
+.btn {
+  background-color: #FAFAFA;
+  border: 1px solid #AAAAAA;
+  box-shadow: 4px 4px 0 0 #999999;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 12px 34px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-box-shadow: 4px 4px 0 0 #999999;
+}
+.btn:hover {
+    background-color: #EEEEEE;
+    text-decoration: none
+}
+.btn:active {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}

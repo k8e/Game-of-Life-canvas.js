@@ -144,6 +144,10 @@ function outlineBox(x, y) {
   canvasCtx.strokeRect(x * 10, y * 10, 10, 10);
 }
 
+function add(a,b) {
+  return a+b;
+}
+
 function createDefaultCells() {
   // Star 1
   map[50][10] = true;

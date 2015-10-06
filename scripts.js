@@ -144,8 +144,8 @@ function outlineBox(x, y) {
   canvasCtx.strokeRect(x * 10, y * 10, 10, 10);
 }
 
-function add(a,b) {
-  return a+b;
+function updatePrevState() {
+  prevState = map;
 }
 
 function createDefaultCells() {

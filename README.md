@@ -1,7 +1,7 @@
 # Game of Life Canvas .js
 Conway's "Game of Life" with the JavaScript canvas
 
-**See it here!** : http://k8e.github.io/game-of-life-canvas.js
+**See it here!** : http://k8e.github.io/Game-of-Life-canvas.js
 
 ## To-do
 1. Merge "pause" and "play" into the same button

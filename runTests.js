@@ -25,10 +25,10 @@ function runTests() {
     left: 1,          cell: {x: 10, y: 10},     right: 1,
     bottom_left: 1,   bottom: 1,                bottom_right: 1
   }
-  testNeighborCount(nCase1, 1);
-  testNeighborCount(nCase2, 2);
-  testNeighborCount(nCase3, 3);
-  testNeighborCount(nCase6, 6);
-  testNeighborCount(nCase8, 8);
+  testCountNeighbors(nCase1, 1);
+  testCountNeighbors(nCase2, 2);
+  testCountNeighbors(nCase3, 3);
+  testCountNeighbors(nCase6, 6);
+  testCountNeighbors(nCase8, 8);
   printTestResults();
 }

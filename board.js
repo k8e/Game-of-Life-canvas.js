@@ -7,7 +7,7 @@ var prevState;
 // Define canvas settings
 var canvas = document.getElementById('game_board');
 var canvasCtx = canvas.getContext('2d');
-canvas.addEventListener('click', canvasClickHandler, false);
+canvas.addEventListener('click', clickBoard, false);
 
 // Initialize game map
 clearMap(map);
@@ -36,7 +36,7 @@ function updateGen() {
   clearMap();
   for (var x = 0; x <= rows; x++) {
     for (var y = 0; y <= cols; y++) {
-      var neighbors = neighborCount(x, y);
+      var neighbors = countNeighbors(x, y);
       // If the cell was alive in previous gen...
       if (prevState[x][y]) {
         if (neighbors < 2) {
@@ -62,21 +62,19 @@ function updateGen() {
   }
 }
 
-function neighborCount(x, y) {
+function countNeighbors(x, y) {
   var total = 0;
     for (var offsetX = -1; offsetX <= 1; offsetX++) {
       for (var offsetY = -1; offsetY <= 1; offsetY++) {
-        // Check for invalid array accesses
-        if (x + offsetX == -1 || y + offsetY == -1 ||
-            x + offsetX > rows - 1 || y + offsetY > cols - 1 )
-        {
-          // Do nothing
-        }
-        else {
-          if (prevState[x + offsetX][y + offsetY]) {
-            if (!(offsetX == 0 && offsetY == 0)) {
-              total++;
-            }
+        // If a potential neighboring spot exists...
+        if ( !( x + offsetX == -1
+             || y + offsetY == -1
+             || x + offsetX > rows - 1
+             || y + offsetY > cols - 1 ) ) {
+          // And if the spot contains a neighbor in previous state...
+          if ( prevState[x + offsetX][y + offsetY]
+                && !( offsetX == 0 && offsetY == 0 ) ) {
+              total++;  // Count neighbor
           }
         }
       }
@@ -84,13 +82,13 @@ function neighborCount(x, y) {
     return total;
 }
 
-function canvasClickHandler(ev) {
+function clickBoard(ev) {
   var x = ev.clientX - canvas.offsetLeft;
   var y = ev.clientY - canvas.offsetTop;
-  addCell(Math.floor(x / 10), Math.floor(y / 10));
+  birthCell(Math.floor(x / 10), Math.floor(y / 10));
 }
 
-function addCell(x, y) {
+function birthCell(x, y) {
   map[x][y] = true;
   fillBox(x, y);
 }

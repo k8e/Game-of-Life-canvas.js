@@ -6,13 +6,57 @@
   </head>
   <body>
     <!-- <h1>Conway's Game of Life</h1>-->
-    <canvas id="game_board" width="700" height="500"></canvas>
+    <canvas id="game_board" width="100" height="100"></canvas>
     <div id="controls">
       <button class="btn" onclick="pause()">Pause</button>
       <button class="btn" onclick="play()">Play</button>
     </div>
-    <script type="text/javascript" src="board.js"></script>
-    <script type="text/javascript" src="tests.js"></script>
-    <script type="text/javascript" src="runTests.js"></script>
+    <script type="text/javascript" src="./js/GameOfLife.js"></script>
+    <script type="text/javascript" src="./js/Generation.js"></script>
+    <script type="text/javascript" src="./js/Board.js"></script>
+    <script type="text/javascript">
+    
+    // Get canvas
+    var golCanvas = document.getElementById('game_board');
+    // Set up Game of Life
+    var gameOflife = new GameOfLife(
+      golCanvas,
+      {
+        windowRef: window,
+        cellSize: 15,
+        frameFrequency: 5,
+        genFrequency: 8
+      }
+    );
+
+    // Make star 
+    gameOflife.addCell(20, 30);
+    gameOflife.addCell(21, 30);
+    gameOflife.addCell(21, 31);
+    gameOflife.addCell(22, 30);
+    // Make another star
+    gameOflife.addCell(30, 15);
+    gameOflife.addCell(31, 15);
+    gameOflife.addCell(31, 16);
+    gameOflife.addCell(32, 15);
+    // Make supernova
+    gameOflife.addCell(10, 5);
+    gameOflife.addCell(10, 6);
+    gameOflife.addCell(10, 7);
+    gameOflife.addCell(10, 8);
+    gameOflife.addCell(10, 9);
+    gameOflife.addCell(10, 10);
+    gameOflife.addCell(10, 11);
+    gameOflife.addCell(10, 12);
+    gameOflife.addCell(10, 13);
+    gameOflife.addCell(10, 14);
+    gameOflife.addCell(10, 15);
+    gameOflife.addCell(10, 16);
+    gameOflife.addCell(10, 17);
+
+    // Start the game
+    gameOflife.play();
+    
+    </script>
   </body>
 </html>

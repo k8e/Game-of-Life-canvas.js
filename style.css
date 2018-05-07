@@ -1,7 +1,7 @@
 body {
   background-color: #CCCCCC;
   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  margin: 50px;
+  margin: 0px;
   padding: 0px;
 }
 h1 {
@@ -10,9 +10,9 @@ h1 {
 }
 #game_board {
   background-color: #FFFFFF;
-  display: block;
-  border-radius: 5px;
-  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 #controls {
   display: block;
@@ -20,6 +20,8 @@ h1 {
   height: 50px;
   text-align: center;
   margin: 10px 0;
+
+  display: none;
 }
 .btn {
   background-color: #FAFAFA;
